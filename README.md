@@ -1,8 +1,14 @@
-Všetci zamestnanci
-<img width="1791" height="810" alt="zamestnanci" src="https://github.com/user-attachments/assets/deb0c9c8-c000-423f-94b7-9d7d0ae7e118" />
+Pridat zamestnanca
+<img width="1827" height="802" alt="pridat_zamestnanca" src="https://github.com/user-attachments/assets/b2a6b669-9f91-4578-845c-c2ffd0b15b7a" />
 
-Nový zamestnanec
-<img width="1782" height="843" alt="novy" src="https://github.com/user-attachments/assets/4b6b4cf0-74fc-4132-8b1a-283926c13ea3" />
+Pridany Zamestnanec 
+<img width="1777" height="281" alt="pridany_zamestnanec" src="https://github.com/user-attachments/assets/87beb9b5-7132-4bb5-984c-58179c7d509a" />
 
-Jeden Zamestnanec
-<img width="1772" height="762" alt="jeden" src="https://github.com/user-attachments/assets/e1f6dff1-a267-461d-af63-bb0c20f3a012" />
+Detail zamestnanca
+<img width="1743" height="651" alt="detail_zamestnanca" src="https://github.com/user-attachments/assets/2450d237-4abd-4c0c-b36f-d285edd3f177" />
+
+404
+<img width="1031" height="327" alt="404" src="https://github.com/user-attachments/assets/96dcfc87-412c-4d9e-b67e-3a98d3a89154" />
+
+500
+<img width="1797" height="762" alt="500" src="https://github.com/user-attachments/assets/d796eb55-f535-4474-ac5c-b69b8f59d76c" />
