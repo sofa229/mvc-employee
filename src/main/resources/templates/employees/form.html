@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sk" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Employee Form</title>
+
+    <style>
+        body { padding-top: 20px; }
+        .header { margin-bottom: 20px; }
+        .text-danger { font-size: 0.9rem; }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h2 th:text="${employee.id != null} ? 'Upraviť zamestnanca' : 'Pridať zamestnanca'"></h2>
+    </div>
+
+    <form th:action="@{/employees}" th:object="${employee}" method="post">
+
+        <div class="card">
+            <div class="card-body">
+
+                <!-- ID iba pri UPDATE -->
+                <input type="hidden" th:if="${employee.id != null}" th:field="*{id}"/>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Meno</label>
+                        <input type="text" class="form-control" th:field="*{firstName}">
+                        <div class="text-danger" th:errors="*{firstName}"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Priezvisko</label>
+                        <input type="text" class="form-control" th:field="*{lastName}">
+                        <div class="text-danger" th:errors="*{lastName}"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Dátum narodenia</label>
+                        <input type="date" class="form-control" th:field="*{birthDate}">
+                        <div class="text-danger" th:errors="*{birthDate}"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control" th:field="*{email}">
+                        <div class="text-danger" th:errors="*{email}"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Telefón</label>
+                        <input type="tel" class="form-control" th:field="*{phone}">
+                        <div class="text-danger" th:errors="*{phone}"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Pozícia</label>
+                        <select class="form-select" th:field="*{jobTitle}">
+                            <option value="">Vyberte pozíciu</option>
+                            <option th:each="t : ${jobTitles}" th:value="${t}" th:text="${t}"></option>
+                        </select>
+                        <div class="text-danger" th:errors="*{jobTitle}"></div>
+                    </div>
+                </div>
+
+                <!-- Úväzok -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Úväzok</label>
+                        <select class="form-select" th:field="*{fullTime}">
+                            <option value="">Vyberte úväzok</option>
+                            <option value="1">Plný úväzok</option>
+                            <option value="0">Čiastočný úväzok</option>
+                        </select>
+                        <div class="text-danger" th:errors="*{fullTime}"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Plat (€)</label>
+                        <input type="number" class="form-control" step="0.01" th:field="*{salary}">
+                        <div class="text-danger" th:errors="*{salary}"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <a th:href="@{/employees}" class="btn btn-secondary">Späť</a>
+                <button class="btn btn-primary" type="submit"
+                        th:text="${employee.id != null} ? 'Upraviť' : 'Pridať'"></button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
